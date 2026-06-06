@@ -1,4 +1,4 @@
-# AI Chat Agent Architecture (Spur Coding Challenge)
+# AI Chat Agent Architecture
 
 The architecture uses an Ingestion Service (Gateway), a BullMQ background worker tier running on Redis, a PostgreSQL database (Supabase) via Sequelize ORM, and a responsive React frontend interface.
 
