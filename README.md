@@ -100,4 +100,4 @@ I checked with multiple messages, the response were logical shot and precise.
 ### Trade-offs & "If I had more time...
 
 * I would have implemented user login to have a seperate session for each user for isolation and security.
-* Would have tried implemnting the web sockets.
+* I would have implemented WebSockets instead of long polling to establish a better bidirectional connection, enabling faster responses (with many users load long polling will be much slower) and reducing server load.
