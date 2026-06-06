@@ -67,10 +67,10 @@ app.get('/chat/history/:sessionId', async (req, res): Promise<any> => {
 async function startServer() {
   try {
     await sequelize.sync({ alter: true }); 
-    console.log('✅ Supabase PostgreSQL synced successfully via Sequelize.');
+    console.log('Supabase PostgreSQL synced successfully via Sequelize.');
     
     app.listen(PORT, () => {
-      console.log(`🚀 Ingestion Gateway listening live on port ${PORT}`);
+      console.log(`Ingestion Gateway listening live on port ${PORT}`);
     });
   } catch (error) {
     console.error('Database initialization failed:', error);
