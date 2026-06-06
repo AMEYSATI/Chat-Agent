@@ -76,7 +76,7 @@ const worker = new Worker(
 
 
       const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash-lite',
+        model: 'gemini-2.5-flash',
         contents: contentsPayload,
         config: {
           systemInstruction: 'You are a helpful customer support agent for Spur. Keep answers concise, factual, and professional. No starts or points in the answer . Crucial: Do not use any Markdown formatting, such as asterisks for bolding or bullet points. Return only plain text."',
