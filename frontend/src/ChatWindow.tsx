@@ -12,7 +12,7 @@ export default function ChatWindow() {
   const sessionId = "spur_test_session_2"; // please enter a new seesion id here for testing as I didnt create a login or signin
 
   useEffect(() => {
-    fetch(`http://localhost:3000/chat/history/${sessionId}`)
+    fetch(`https://chat-agent-ingestion-service.onrender.com/chat/history/${sessionId}`)
       .then(res => res.json())
       .then(data => setMessages(data))
       .catch(err => console.error(err));
@@ -30,7 +30,7 @@ export default function ChatWindow() {
     setMessages(prev => [...prev, { sender: 'user', text: userText }]);
 
     try {
-      const response = await fetch('http://localhost:3000/chat/message', {
+      const response = await fetch('https://chat-agent-ingestion-service.onrender.com/chat/message', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId, message: userText }),
