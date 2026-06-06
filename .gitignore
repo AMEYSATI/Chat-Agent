@@ -1,0 +1,16 @@
+
+node_modules/
+frontend/node_modules/
+ingestion-service/node_modules/
+worker-service/node_modules/
+
+dist/
+frontend/dist/
+
+.env
+ingestion-service/.env
+worker-service/.env
+
+
+.DS_Store
+Thumbs.db
