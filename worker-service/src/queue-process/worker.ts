@@ -3,8 +3,22 @@ import {Redis} from 'ioredis';
 import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import { sequelize, Message } from '../db/database.js';
+import express from 'express';
 
 dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT;
+
+app.get('/health', (req, res) => {
+  res.status(200).send('Worker service is actively consuming BullMQ queues!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Service active on port ${PORT}`);
+});
+
+// I used the above express server to host worker service as web service since background worker service requires monthly billing but webservice was free.
 
 const redisUrl = process.env.REDIS_URL;
 const geminiApiKey = process.env.GEMINI_API_KEY;
