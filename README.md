@@ -16,7 +16,7 @@ The architecture uses an Ingestion Service (Gateway), a BullMQ background worker
 
 Here is the simple architecture diagram of the flow:
 
-![Uploading Chat_Agent.png…]()
+![Chat Agent Architecture](./Others/Chat_Agent.png)
 
 _______________________________
 
