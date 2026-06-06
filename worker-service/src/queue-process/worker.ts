@@ -79,7 +79,7 @@ const worker = new Worker(
         model: 'gemini-2.5-flash-lite',
         contents: contentsPayload,
         config: {
-          systemInstruction: 'You are a helpful customer support agent for Spur. Keep answers concise, factual, and professional. Crucial: Do not use any Markdown formatting, such as asterisks for bolding or bullet points. Return only plain text."',
+          systemInstruction: 'You are a helpful customer support agent for Spur. Keep answers concise, factual, and professional. No starts or points in the answer . Crucial: Do not use any Markdown formatting, such as asterisks for bolding or bullet points. Return only plain text."',
         },
       });
       const aiReply = response.text || "I'm sorry, I generated an empty response.";
