@@ -21,7 +21,7 @@ Here is the simple architecture diagram of the flow:
 _______________________________
 
 
-#Local Setup
+# Local Setup
 
 * **Node.js** (22.14 version is used by me)
 * **Redis Instance** (used cloud hosted uptash)
@@ -74,8 +74,9 @@ cd frontend && npm run dev
 
 ```
 
-*### Step 5: Few things
-* Currently since there is no user login , if you want to create a new chat session then "Go to fronten folder-->src-->ChatWindow.tsx --> look at the starting only you will see const sessionId = "spur_test_session_2"; You can change it to any name and save then a new session will be created.
+* ### Step 5: Few things
+  
+* Currently since there is no user login , if you want to create a new chat session then "Go to frontend folder-->src-->ChatWindow.tsx --> look at the starting only, you will see const sessionId = "spur_test_session_2"; You can change it to any name and save then a new session will be created.
 
 * For redis signup go to uptash, create your account, Create database and from there you can copy the url for your redis env variable
 
@@ -88,7 +89,8 @@ Model: Google Gemini (via the formal new @google/genai SDK package).
 
 Selection Reason: I already had an api key for it so thats why.
 
-Prompting Strategy
+### Prompting Strategy
+
 The model behavior is isolated entirely through the SDK's structural systemInstruction configurations:
 
 "You are a helpful customer support agent for Spur. Keep answers concise, factual, and professional."
@@ -98,4 +100,4 @@ I checked with multiple messages, the response were logical shot and precise.
 ### Trade-offs & "If I had more time...
 
 * I would have implemented user login to have a seperate session for each user for isolation and security.
-* Would have tried implemnting the web sockets.
+* I would have implemented WebSockets instead of long polling to establish a better bidirectional connection, enabling faster responses (with many users load long polling will be much slower) and reducing server load.
