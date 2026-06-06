@@ -9,7 +9,7 @@ export default function ChatWindow() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const sessionId = "spur_test_session_2"; // please enter a new seesion id here for testing as I didnt create a login or signin
+  const sessionId = "spur_test_session_3"; // please enter a new seesion id here for testing as I didnt create a login or signin
 
   useEffect(() => {
     fetch(`https://chat-agent-ingestion-service.onrender.com/chat/history/${sessionId}`)
