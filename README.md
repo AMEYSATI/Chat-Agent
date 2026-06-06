@@ -101,3 +101,10 @@ I checked with multiple messages, the response were logical shot and precise.
 
 * I would have implemented user login to have a seperate session for each user for isolation and security.
 * I would have implemented WebSockets instead of long polling to establish a better bidirectional connection, enabling faster responses (with many users load long polling will be much slower) and reducing server load.
+
+# Other things
+This assesment is hosted on Render's free tier and utilizes the free-tier API for Gemini 2.5 Flash. Few things might happen:
+
+* If the application has been inactive, the background worker and Redis instances may take up to 30 seconds to spin up on the initial request.
+* During periods of high traffic on Google's Gemini servers, response generation times may increase, occasionally leading to request timeouts. Refreshing the chat interface will load the completed response directly from the database once processing finishes.
+
